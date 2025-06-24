@@ -18,8 +18,8 @@ public class HospitalMain {
         Transaction tx = session.beginTransaction();
 
         // Create
-        Hospital h1 = new Hospital("City Hospital", "New York", 200);
-        Hospital h2 = new Hospital("General Hospital", "Chicago", 150);
+        Hospital h1 = new Hospital("City Hospital", "Nagpur", 200);
+        Hospital h2 = new Hospital("AIIMS Hospital", "Mumbai", 150);
         session.save(h1);
         session.save(h2);
 
@@ -36,7 +36,7 @@ public class HospitalMain {
 
         // Delete
         Query deleteQuery = session.createQuery("DELETE Hospital WHERE name = :name");
-        deleteQuery.setParameter("name", "General Hospital");
+        deleteQuery.setParameter("name", "AIIMS Hospital");
         deleteQuery.executeUpdate();
 
         tx.commit();
